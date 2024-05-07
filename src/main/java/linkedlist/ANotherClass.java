@@ -1,2 +1,4 @@
-package linkedlist;public class ANotherClass {
+package linkedlist;
+
+public class ANotherClass {
 }
