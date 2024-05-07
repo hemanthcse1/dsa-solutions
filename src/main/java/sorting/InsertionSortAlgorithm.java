@@ -1,6 +1,6 @@
 package sorting;
 
-public class SelectionSortAlgorithm {
+public class InsertionSortAlgorithm {
 
     public static void main(String[] args) {
 
