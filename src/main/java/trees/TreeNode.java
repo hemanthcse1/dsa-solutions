@@ -32,6 +32,45 @@ public class TreeNode {
 
         System.out.println("Root node -> "+root.val);
 
-        System.out.println("last node -> "+rightNode.right.val);
+
+
+        System.out.println("In order traversal");
+        inOrderTraversal(root);
+
+        System.out.println("\nPre order traversal");
+        preOrderTraversal(root);
+
+        System.out.println("\nPost order traversal");
+        postOrderTraversal(root);
+    }
+
+    public static void inOrderTraversal(TreeNode root){
+        if (root == null){
+            return;
+        }
+
+        inOrderTraversal(root.left);
+        System.out.print(root.val+" -> ");
+        inOrderTraversal(root.right);
+    }
+
+    public static void preOrderTraversal(TreeNode root){
+        if (root == null){
+            return;
+        }
+
+        System.out.print(root.val+" -> ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    public static void postOrderTraversal(TreeNode root){
+        if (root == null){
+            return;
+        }
+
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.val+" -> ");
     }
 }
