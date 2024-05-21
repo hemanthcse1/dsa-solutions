@@ -1,5 +1,8 @@
 package trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeNode {
     private int val;
     private TreeNode left;
@@ -42,6 +45,9 @@ public class TreeNode {
 
         System.out.println("\nPost order traversal");
         postOrderTraversal(root);
+
+        System.out.println("\n Level order traversal");
+        levelOrderTraversal(root);
     }
 
     public static void inOrderTraversal(TreeNode root){
@@ -72,5 +78,26 @@ public class TreeNode {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.print(root.val+" -> ");
+    }
+
+
+    public static void levelOrderTraversal(TreeNode root){
+        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
+
+        treeNodeQueue.add(root);
+
+        while (!treeNodeQueue.isEmpty()){
+            TreeNode treeNode = treeNodeQueue.poll();
+
+            System.out.print(treeNode.val+" -> ");
+
+            if (treeNode.left != null){
+                treeNodeQueue.add(treeNode.left);
+            }
+
+            if (treeNode.right != null){
+                treeNodeQueue.add(treeNode.right);
+            }
+        }
     }
 }
