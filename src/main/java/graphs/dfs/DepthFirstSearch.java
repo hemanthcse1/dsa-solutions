@@ -61,8 +61,12 @@ public class DepthFirstSearch {
 
         graph.printGraph();
 
-        System.out.println("\n--------------DFS--------------\n");
+        System.out.println("\n--------------DFS iterative approach--------------\n");
         graph.iterativeDFS(1);
+
+
+        System.out.println("\n--------------DFS recursive approach--------------\n");
+        graph.DFS(1);
     }
 
     public  void iterativeDFS(int vertex){
@@ -81,6 +85,23 @@ public class DepthFirstSearch {
                 if (!visited.contains(neighbor)){
                     stack.push(neighbor);
                 }
+            }
+        }
+    }
+
+    public void DFS(int startVertex){
+        Set<Integer> visited = new HashSet<>();
+        recursiveDFS(startVertex,visited);
+    }
+
+    public void recursiveDFS(int startVertex, Set<Integer> visited){
+
+        visited.add(startVertex);
+        System.out.print(" -> "+startVertex);
+
+        for (int neighbor: adjacencyList.getOrDefault(startVertex,Collections.emptyList())){
+            if (!visited.contains(neighbor)){
+                recursiveDFS(neighbor,visited);
             }
         }
     }
