@@ -1,7 +1,5 @@
 package hashtable.implementation;
 
-import java.util.Map;
-
 public class HemanthHashTable<K, V> {
 
     private Bucket<K, V>[] buckets;
