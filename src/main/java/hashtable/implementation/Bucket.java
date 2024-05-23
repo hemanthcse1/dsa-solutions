@@ -45,4 +45,8 @@ public class Bucket<K, V> {
         }
         return false;
     }
+
+    public Node<K,V> getHead(){
+        return head;
+    }
 }
