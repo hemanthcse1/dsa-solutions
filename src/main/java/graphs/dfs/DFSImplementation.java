@@ -25,7 +25,11 @@ public class DFSImplementation {
 
         graph.printGraph();
 
-        System.out.println("\n------------------------\n");
+        System.out.println("\n------------Iterative------------\n");
         graph.DFSIterative("A");
+
+
+        System.out.println("\n------------Recursive------------\n");
+        graph.DFS("A");
     }
 }

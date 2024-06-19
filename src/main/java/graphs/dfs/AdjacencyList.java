@@ -60,4 +60,20 @@ public class AdjacencyList {
             }
         }
     }
+
+    public void DFS(String vertex){
+        Set<String> visited = new HashSet<>();
+        DFSRecursive(vertex,visited);
+    }
+
+    public void DFSRecursive(String vertex,Set<String> visited){
+        visited.add(vertex);
+        System.out.print(vertex+" ");
+
+        for (String neighbor: adjacencyList.getOrDefault(vertex,Collections.emptyList())){
+            if (!visited.contains(neighbor)){
+                DFSRecursive(neighbor,visited);
+            }
+        }
+    }
 }
